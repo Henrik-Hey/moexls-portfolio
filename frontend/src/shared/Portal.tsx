@@ -5,7 +5,7 @@ import IDs from "../IDs";
 
 interface PortalProps {
   children: any;
-  onMount?: () => {};
+  onMount?: () => void;
 }
 
 const Portal = ({ children, onMount }: PortalProps) => {
@@ -13,9 +13,12 @@ const Portal = ({ children, onMount }: PortalProps) => {
 
   useEffect(() => {
     setMounted(true);
-    if (onMount) onMount();
     return () => setMounted(false);
   }, []);
+
+  useEffect(() => {
+    if (onMount && mounted) onMount();
+  }, [mounted]);
 
   return mounted
     ? createPortal(children, document.querySelector(`#${IDs.Portal}`))

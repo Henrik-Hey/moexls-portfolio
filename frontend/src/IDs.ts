@@ -3,6 +3,7 @@ const IDs = {
   Intro: "moe-xls-intro",
   About: "moe-xls-about",
   Projects: "moe-xls-projects",
+  ProjectsScroller: "moe-xls-ProjectsScroller",
   Portal: "moe-xls-portal",
 };
 

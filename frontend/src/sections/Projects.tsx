@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import IDs from "../IDs";
 
 const Projects = () => {
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: `#${IDs.Projects}`,
+      endTrigger: `#${IDs.Projects}`,
+      start: "top top",
+      end: "bottom bottom",
+      pin: `#${IDs.Projects}-content`,
+    });
+  }, []);
+
   return (
     <Container id={IDs.Projects}>
-      <ContentContainer>
+      <ContentContainer id={`${IDs.Projects}-content`}>
         <Heading>
           Here are a handful of my projects - a lil mix of personal, and
           freelance projects :)
@@ -20,13 +30,13 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
 `;
 
 const ContentContainer = styled.div`
   margin: 32px;
   width: calc(100% - 64px);
-  height: 100%;
+  height: 100vh;
   max-width: 960px;
   display: flex;
   flex-direction: column;

@@ -7,6 +7,7 @@ import PersistentBackdrop from "../src/sections/PersistentBackdrop";
 import Intro from "../src/sections/Intro";
 import About from "../src/sections/About";
 import Projects from "../src/sections/Projects";
+import IDs from "../src/IDs";
 
 export default function Home() {
   return (
@@ -26,10 +27,19 @@ export default function Home() {
       <Intro />
       <About />
       <Projects />
+      <PortalAnchor id={IDs.Portal} />
       <GlobalStyles />
     </PaletteProvider>
   );
 }
+
+const PortalAnchor = styled.div`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+`;
 
 const GlobalStyles = createGlobalStyle`
   * {

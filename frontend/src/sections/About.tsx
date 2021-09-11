@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import IDs from "../IDs";
 
 const About = () => {
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: `#${IDs.About}`,
+      endTrigger: `#${IDs.About}`,
+      start: "top top",
+      end: "bottom bottom",
+      pin: `#${IDs.About}-content`,
+    });
+  }, []);
+
   return (
     <Container id={IDs.About}>
-      <ContentContainer>
+      <ContentContainer id={`${IDs.About}-content`}>
         <Heading>
           Welcome to my digital playground / portfolio website :D
         </Heading>
@@ -25,13 +35,13 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
 `;
 
 const ContentContainer = styled.div`
   margin: 32px;
   width: calc(100% - 64px);
-  height: 100%;
+  height: 100vh;
   max-width: 960px;
   display: flex;
   flex-direction: column;
