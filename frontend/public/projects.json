@@ -1,0 +1,524 @@
+{
+  "sectionHeading": "Here are a handful of my projects - a lil mix of personal, and freelance projects :)",
+  "sections": {
+    "projects": [
+      {
+        "imageURL": "/projects/DD_landscape1.png",
+        "title": "DD landscape poster 1",
+        "description": "make it bold"
+      },
+      {
+        "imageURL": "/projects/DD_landscape2.png",
+        "title": "DD landscape poster 2",
+        "description": "make it shine"
+      },
+      {
+        "imageURL": "/projects/DD_landscape3.png",
+        "title": "DD landscape poster 3",
+        "description": "make it spotless"
+      },
+      {
+        "imageURL": "/projects/Interior_landscape.png",
+        "title": "Interior promotional",
+        "description": "headline interior"
+      },
+      {
+        "imageURL": "/projects/tooth_vertical.png",
+        "title": "Dental promotional",
+        "description": "middlesex dental promotional"
+      },
+      {
+        "imageURL": "/projects/unbound_landscape.png",
+        "title": "Unbound promotional",
+        "description": "unbound bw landscape shot"
+      },
+      {
+        "imageURL": "/projects/Interior_bros.jpg",
+        "title": "Interior broc",
+        "description": "interior promotional"
+      }
+    ],
+    "logos": [
+      {
+        "imageURL": "/logos/247Dental_logo.png",
+        "title": "247 dental logo",
+        "description": "Emergency dental service"
+      },
+
+      {
+        "imageURL": "/logos/Carters_logo.png",
+        "title": "Carters printing",
+        "description": "Carters print shop"
+      },
+
+      {
+        "imageURL": "/logos/Dixon_logo.png",
+        "title": "Dixon detailing",
+        "description": "Dixon car detailing service"
+      },
+
+      {
+        "imageURL": "/logos/Northern_logo.png",
+        "title": "Northern clothing",
+        "description": "Northerns clothing brand"
+      },
+      {
+        "imageURL": "/logos/Saintsbury_logo.png",
+        "title": "Saintsbury dental",
+        "description": "Saintsbury family dental"
+      },
+
+      {
+        "imageURL": "/logos/Unbound1.png",
+        "title": "Unbound clothing 1",
+        "description": "Unbound fashion"
+      },
+
+      {
+        "imageURL": "/logos/Unbound2.png",
+        "title": "Unbound clothing 2",
+        "description": "Unbound fashion 2"
+      },
+
+      {
+        "imageURL": "/logos/Interior_logo1.jpg",
+        "title": "Interior design",
+        "description": "Interior paint services"
+      }
+    ],
+    "photos": [
+      {
+        "imageURL": "/photos/phot1.png",
+        "title": "Photo1"
+      },
+      {
+        "imageURL": "/photos/phot2.png",
+        "title": "Photo2"
+      },
+      {
+        "imageURL": "/photos/phot3.jpg",
+        "title": "Photo3"
+      },
+      {
+        "imageURL": "/photos/phot4.png",
+        "title": "Photo4"
+      },
+      {
+        "imageURL": "/photos/phot5.png",
+        "title": "Photo5"
+      },
+      {
+        "imageURL": "/photos/phot6.png",
+        "title": "Photo6"
+      },
+      {
+        "imageURL": "/photos/phot7.png",
+        "title": "Photo7"
+      },
+      {
+        "imageURL": "/photos/phot8.jpg",
+        "title": "Photo8"
+      },
+      {
+        "imageURL": "/photos/phot9.png",
+        "title": "Photo9"
+      },
+      {
+        "imageURL": "/photos/phot10.jpg",
+        "title": "Photo10"
+      },
+      {
+        "imageURL": "/photos/phot11.png",
+        "title": "Photo11"
+      },
+      {
+        "imageURL": "/photos/phot12.png",
+        "title": "Photo12"
+      },
+      {
+        "imageURL": "/photos/phot13.png",
+        "title": "Photo13"
+      },
+      {
+        "imageURL": "/photos/phot14.png",
+        "title": "Photo14"
+      },
+      {
+        "imageURL": "/photos/phot15.png",
+        "title": "Photo15"
+      },
+      {
+        "imageURL": "/photos/phot16.png",
+        "title": "Photo16"
+      },
+      {
+        "imageURL": "/photos/phot17.png",
+        "title": "Photo17"
+      },
+      {
+        "imageURL": "/photos/phot18.png",
+        "title": "Photo18"
+      },
+      {
+        "imageURL": "/photos/phot19.png",
+        "title": "Photo1"
+      },
+      {
+        "imageURL": "/photos/phot20.png",
+        "title": "Photo20"
+      },
+      {
+        "imageURL": "/photos/phot21.png",
+        "title": "Photo21"
+      },
+      {
+        "imageURL": "/photos/phot22.png",
+        "title": "Photo22"
+      },
+      {
+        "imageURL": "/photos/phot23.png",
+        "title": "Photo23"
+      },
+      {
+        "imageURL": "/photos/phot24.png",
+        "title": "Photo24"
+      },
+      {
+        "imageURL": "/photos/phot25.png",
+        "title": "Photo25"
+      },
+      {
+        "imageURL": "/photos/phot26.png",
+        "title": "Photo26"
+      },
+      {
+        "imageURL": "/photos/phot27.png",
+        "title": "Photo27"
+      },
+      {
+        "imageURL": "/photos/phot28.png",
+        "title": "Photo28"
+      },
+      {
+        "imageURL": "/photos/phot29.png",
+        "title": "Photo29"
+      },
+      {
+        "imageURL": "/photos/phot30.png",
+        "title": "Photo30"
+      },
+      {
+        "imageURL": "/photos/phot31.png",
+        "title": "Photo31"
+      },
+      {
+        "imageURL": "/photos/phot32.jpg",
+        "title": "Photo32"
+      },
+      {
+        "imageURL": "/photos/phot33.png",
+        "title": "Photo33"
+      },
+      {
+        "imageURL": "/photos/phot34.png",
+        "title": "Photo34"
+      },
+      {
+        "imageURL": "/photos/phot35.png",
+        "title": "Photo35"
+      },
+      {
+        "imageURL": "/photos/phot36.png",
+        "title": "Photo36"
+      },
+      {
+        "imageURL": "/photos/phot37.png",
+        "title": "Photo37"
+      },
+      {
+        "imageURL": "/photos/phot38.png",
+        "title": "Photo38"
+      },
+      {
+        "imageURL": "/photos/phot39.jpg",
+        "title": "Photo39"
+      },
+      {
+        "imageURL": "/photos/phot40.jpg",
+        "title": "Photo40"
+      }
+    ],
+    "illustrations": [
+      {
+        "imageURL": "/illustrations/thumbnailillustration1.png",
+        "title": "thumbnail illustration 1",
+        "description": "pink and blue illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration2.png",
+        "title": "thumbnail illustration 2",
+        "description": "red and dark green illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration3.png",
+        "title": "thumbnail illustration 3",
+        "description": "pink and yellow illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration4.png",
+        "title": "thumbnail illustration 4",
+        "description": "yellow and blue illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration5.png",
+        "title": "thumbnail illustration 5",
+        "description": "red and dark blue illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration6.png",
+        "title": "thumbnail illustration 6",
+        "description": "cyan and dark blue illustration"
+      },
+      {
+        "imageURL": "/illustrations/thumbnailillustration7.png",
+        "title": "thumbnail illustration 7",
+        "description": "pink and cream illustration"
+      }
+    ],
+    "posters": [
+      {
+        "imageURL": "/posters/poster001.png",
+        "title": "poster001",
+        "description": "poster 1"
+      },
+      {
+        "imageURL": "/posters/poster002.png",
+        "title": "poster 2"
+      },
+      {
+        "imageURL": "/posters/poster003.png",
+        "title": "poster 3"
+      },
+      {
+        "imageURL": "/posters/poster004.png",
+        "title": "poster 4"
+      },
+      {
+        "imageURL": "/posters/poster005.png",
+        "title": "poster 5"
+      },
+      {
+        "imageURL": "/posters/poster006.png",
+        "title": "poster 6"
+      },
+      {
+        "imageURL": "/posters/poster007.png",
+        "title": "poster 7"
+      },
+      {
+        "imageURL": "/posters/poster008.png",
+        "title": "poster 8"
+      },
+      {
+        "imageURL": "/posters/poster009.png",
+        "title": "poster 9"
+      },
+      {
+        "imageURL": "/posters/poster010.png",
+        "title": "poster 10"
+      },
+      {
+        "imageURL": "/posters/poster011.png",
+        "title": "poster 11"
+      },
+      {
+        "imageURL": "/posters/poster012.png",
+        "title": "poster 12"
+      },
+      {
+        "imageURL": "/posters/poster013.png",
+        "title": "poster 13"
+      },
+      {
+        "imageURL": "/posters/poster014.png",
+        "title": "poster 14"
+      },
+      {
+        "imageURL": "/posters/poster015.png",
+        "title": "poster 15"
+      },
+      {
+        "imageURL": "/posters/poster016.png",
+        "title": "poster 16"
+      },
+      {
+        "imageURL": "/posters/poster017.png",
+        "title": "poster 17"
+      },
+      {
+        "imageURL": "/posters/poster018.png",
+        "title": "poster 18"
+      },
+      {
+        "imageURL": "/posters/poster019.png",
+        "title": "poster 19"
+      },
+      {
+        "imageURL": "/posters/poster020.png",
+        "title": "poster 20"
+      },
+      {
+        "imageURL": "/posters/poster021.png",
+        "title": "poster 21"
+      },
+      {
+        "imageURL": "/posters/poster022.png",
+        "title": "poster 22"
+      },
+      {
+        "imageURL": "/posters/poster023.png",
+        "title": "poster 23"
+      },
+      {
+        "imageURL": "/posters/poster024.png",
+        "title": "poster 24"
+      },
+      {
+        "imageURL": "/posters/poster025.png",
+        "title": "poster 25"
+      },
+      {
+        "imageURL": "/posters/poster026.png",
+        "title": "poster 26"
+      },
+      {
+        "imageURL": "/posters/poster027.png",
+        "title": "poster 27"
+      },
+      {
+        "imageURL": "/posters/poster029.png",
+        "title": "poster 29"
+      },
+      {
+        "imageURL": "/posters/poster030.png",
+        "title": "poster 30"
+      },
+      {
+        "imageURL": "/posters/poster031.png",
+        "title": "poster 31"
+      },
+      {
+        "imageURL": "/posters/poster033.png",
+        "title": "poster 33"
+      },
+      {
+        "imageURL": "/posters/poster035.png",
+        "title": "poster 35"
+      },
+      {
+        "imageURL": "/posters/poster036.png",
+        "title": "poster 36"
+      },
+      {
+        "imageURL": "/posters/poster037.png",
+        "title": "poster 37"
+      },
+      {
+        "imageURL": "/posters/poster038.png",
+        "title": "poster 38"
+      },
+      {
+        "imageURL": "/posters/poster039.png",
+        "title": "poster 39"
+      },
+      {
+        "imageURL": "/posters/poster040.png",
+        "title": "poster 40"
+      },
+      {
+        "imageURL": "/posters/poster041.png",
+        "title": "poster 41"
+      },
+      {
+        "imageURL": "/posters/poster042.png",
+        "title": "poster 42"
+      },
+      {
+        "imageURL": "/posters/poster043.png",
+        "title": "poster 43"
+      },
+      {
+        "imageURL": "/posters/poster045.png",
+        "title": "poster 45"
+      },
+      {
+        "imageURL": "/posters/poster046.png",
+        "title": "poster 46"
+      },
+      {
+        "imageURL": "/posters/poster047.png",
+        "title": "poster 47"
+      },
+      {
+        "imageURL": "/posters/poster051.png",
+        "title": "poster 51"
+      },
+      {
+        "imageURL": "/posters/poster054.png",
+        "title": "poster 54"
+      }
+    ],
+    "user_interface": [
+      {
+        "imageURL": "/userInterface/UI1.png",
+        "title": "UI1",
+        "description": "Sign in form"
+      },
+      {
+        "imageURL": "/userInterface/UI2.png",
+        "title": "UI2",
+        "description": "Checkout page"
+      },
+      {
+        "imageURL": "/userInterface/UI3.png",
+        "title": "UI3",
+        "description": "Calculator"
+      },
+      {
+        "imageURL": "/userInterface/UI4.png",
+        "title": "UI4",
+        "description": "Dropbox signup"
+      },
+      {
+        "imageURL": "/userInterface/UI5.png",
+        "title": "UI5",
+        "description": "Logo"
+      },
+      {
+        "imageURL": "/userInterface/UI6.png",
+        "title": "UI6",
+        "description": "Banking app"
+      },
+      {
+        "imageURL": "/userInterface/UI7.png",
+        "title": "UI7",
+        "description": "Clothing checkout"
+      },
+      {
+        "imageURL": "/userInterface/UI8.png",
+        "title": "UI8",
+        "description": "404 page"
+      },
+      {
+        "imageURL": "/userInterface/UI9.png",
+        "title": "UI9",
+        "description": "Music player"
+      },
+      {
+        "imageURL": "/userInterface/UI10.png",
+        "title": "UI10",
+        "description": "Nike shoe page"
+      }
+    ]
+  }
+}

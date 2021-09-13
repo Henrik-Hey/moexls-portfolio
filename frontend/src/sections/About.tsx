@@ -22,10 +22,16 @@ const About = () => {
         </Heading>
         <SubHeading>
           I’m a freelance designer specializing in branding and marketing, I
-          also do a ton of illustrations, copywriting, UI/UX designs on the
-          side. My favorite programs are Photoshop, Illustrator, Indesign,
-          Figma, and Affinity photo / designer (:
+          also do a lot of illustrations, copywriting, UI/UX designs on the
+          side. <br />
+          <i>My favorite programs are:</i>
         </SubHeading>
+        <ProgramContainer>
+          <ProgramImage src="/adobe-photoshop-logo.png" />
+          <ProgramImage src="/adobe-illustrator.png" />
+          <ProgramImage src="/figma-logo.png" />
+          <ProgramImage src="/adobe-indesign-logo.png" />
+        </ProgramContainer>
       </ContentContainer>
     </Container>
   );
@@ -36,6 +42,9 @@ const Container = styled.section`
   z-index: 1;
   width: 100vw;
   height: 200vh;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ContentContainer = styled.div`
@@ -49,17 +58,29 @@ const ContentContainer = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-size: 5rem;
+  font-size: 5.625rem;
   color: ${({ theme }) => theme.color4};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
 `;
 
 const SubHeading = styled.p`
-  max-width: 640px;
-  font-size: 1.25rem;
+  max-width: 720px;
+  font-size: 1.5rem;
   font-weight: 500;
   color: ${({ theme }) => theme.color4};
+`;
+
+const ProgramContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ProgramImage = styled.img`
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  margin-right: 8px;
 `;
 
 export default About;

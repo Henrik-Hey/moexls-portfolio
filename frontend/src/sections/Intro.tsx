@@ -21,13 +21,14 @@ const Intro = () => {
     <Container id={IDs.Intro}>
       <HeadingContainer>
         <HeadingContent ref={contentRef}>
-          Hello, I’m Moe. A Freelance Designer based in London, ON
+          Hello, I’m Moe<Highlight>.</Highlight> <br />A Freelance Designer
+          based in London, ON
         </HeadingContent>
         <HeadingSub ref={subHeadingRef}>
           I use expressive design to create brand assets for small and big
-          businesses. I create everything (and anything) from tiny business
-          cards, to fullscale website prototypes and brand guides to help
-          businesses thrive.
+          businesses. I create everything (<i>and anything</i>) from tiny
+          business cards, to fullscale website prototypes and brand guides to
+          help businesses thrive.
         </HeadingSub>
       </HeadingContainer>
     </Container>
@@ -53,7 +54,7 @@ const BuildAnimation = (
       opacity: 1,
       duration: 1,
     },
-    6
+    4
   );
 
   timeline.fromTo(
@@ -67,7 +68,7 @@ const BuildAnimation = (
       opacity: 1,
       duration: 1,
     },
-    6.5
+    4.5
   );
 };
 
@@ -81,26 +82,35 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const HeadingContainer = styled.header`
   position: relative;
   width: 100%;
-  max-width: 864px;
+  max-width: 930px;
   margin-left: 32px;
   margin-right: 32px;
 `;
 
 const HeadingContent = styled.h1`
-  font-size: 5rem;
+  font-size: 5.75rem;
+  font-weight: 900;
   color: ${({ theme }) => theme.color1};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
 `;
 
+const Highlight = styled.span`
+  color: ${({ theme }) => theme.color3};
+`;
+
 const HeadingSub = styled.h2`
-  font-size: 1.25rem;
-  font-weight: 500;
+  max-width: 640px;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: ${({ theme }) => theme.color1};
 `;
 

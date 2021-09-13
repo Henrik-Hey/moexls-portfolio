@@ -35,6 +35,7 @@ const PersistentBackdrop = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
   }, []);
 
   const onMount = () => {
@@ -60,10 +61,18 @@ const PersistentBackdrop = () => {
         </CanvasContainer>
         <NavBar id={IDs.Navbar}>
           <NavList>
-            <NavItem>Home</NavItem>
-            <NavItem>About</NavItem>
-            <NavItem>Projects</NavItem>
-            <NavItem>Contact</NavItem>
+            <NavItem>
+              <NavLink href={`#${IDs.Intro}`}>Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={`#${IDs.About}`}>About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={`#${IDs.Projects}`}>Projects</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={`#`}>Contact</NavLink>
+            </NavItem>
           </NavList>
         </NavBar>
       </Portal>
@@ -213,22 +222,23 @@ const BuildAnimation = (
     {
       x: "32px",
       y: "32px",
-      scale: ".25",
+      scale: ".2",
     },
-    5
+    3
   );
 
   timeline.fromTo(
     `#${IDs.Navbar}`,
     { x: 100, opacity: 0 },
-    { x: 0, opacity: 1 },
-    6
+    { x: 0, opacity: 1, color: palette.theme.color1 },
+    4
   );
 
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[0],
     `#${IDs.About}`,
+    palette.theme.color1,
     palette.theme.color4
   );
 
@@ -236,6 +246,7 @@ const BuildAnimation = (
     // @ts-ignore
     waveModels.current[1],
     `#${IDs.Projects}`,
+    palette.theme.color4,
     palette.theme.color4
   );
 };
@@ -243,6 +254,7 @@ const BuildAnimation = (
 const buildBGWaveAnimation = (
   model: THREE.Mesh,
   start: string,
+  oldColor: string,
   newColor: string
 ) => {
   const timeline = gsap.timeline();
@@ -270,7 +282,12 @@ const buildBGWaveAnimation = (
     0.5
   );
 
-  timeline.to(`#${IDs.Navbar}`, { color: newColor }, 0.33);
+  timeline.fromTo(
+    `#${IDs.Navbar}`,
+    { color: oldColor },
+    { color: newColor },
+    0.33
+  );
 
   ScrollTrigger.create({
     trigger: start,
@@ -461,8 +478,14 @@ const NavItem = styled.li`
   color: inherit;
   text-transform: capitalize;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-left: 32px;
+`;
+
+const NavLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  font-family: BebasKai;
 `;
 
 export default PersistentBackdrop;

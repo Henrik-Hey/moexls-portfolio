@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import IDs from "../IDs";
+import projects from "../../public/projects.json";
 
 const Projects = () => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const Projects = () => {
       <ContentContainer id={`${IDs.Projects}-content`}>
         <Heading>
           Here are a handful of my projects - a lil mix of personal, and
-          freelance projects :)
+          freelance projects <Highlight>:)</Highlight>
         </Heading>
       </ContentContainer>
     </Container>
@@ -31,6 +32,9 @@ const Container = styled.section`
   z-index: 1;
   width: 100vw;
   height: 200vh;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ContentContainer = styled.div`
@@ -48,6 +52,10 @@ const Heading = styled.h2`
   color: ${({ theme }) => theme.color4};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
+`;
+
+const Highlight = styled.span`
+  color: ${({ theme }) => theme.color3};
 `;
 
 export default Projects;
