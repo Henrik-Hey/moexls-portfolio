@@ -111,7 +111,7 @@ const Container = styled.section`
   z-index: 1;
   width: 100vw;
   margin-top: 10vh;
-  min-height: 250vh;
+  min-height: 225vh;
 `;
 
 const ContentContainer = styled.div`

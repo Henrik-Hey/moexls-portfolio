@@ -1,4 +1,5 @@
 import Layout from "../src/shared/Layout";
+import styled from "styled-components";
 
 export default function UIUX() {
   return (

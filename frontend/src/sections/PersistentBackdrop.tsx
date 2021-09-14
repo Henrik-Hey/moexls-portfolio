@@ -71,7 +71,7 @@ const PersistentBackdrop = () => {
               <NavLink href={`#${IDs.Projects}`}>Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={`#`}>Contact</NavLink>
+              <NavLink href={`#${IDs.Contact}`}>Contact</NavLink>
             </NavItem>
           </NavList>
         </NavBar>
@@ -132,6 +132,16 @@ const InitializePersistentThreeJS = (
   waves.push(wave3);
   waveModels.current.push(wave3);
 
+  const wave4 = generateWaveMesh(
+    waveDepth,
+    waveWidth,
+    waveHeight,
+    0x141414,
+    0.99
+  );
+  waves.push(wave4);
+  waveModels.current.push(wave4);
+
   scene.add(...waves);
 
   const animate = () => {
@@ -140,6 +150,7 @@ const InitializePersistentThreeJS = (
 
     wave2.material.uniforms.delta.value += 0.025;
     wave3.material.uniforms.delta.value += 0.025;
+    wave4.material.uniforms.delta.value += 0.025;
   };
   animate();
 };
@@ -248,6 +259,14 @@ const BuildAnimation = (
     `#${IDs.Projects}`,
     palette.theme.color4,
     palette.theme.color4
+  );
+
+  buildBGWaveAnimation(
+    // @ts-ignore
+    waveModels.current[2],
+    `#${IDs.Contact}`,
+    palette.theme.color4,
+    palette.theme.color1
   );
 };
 

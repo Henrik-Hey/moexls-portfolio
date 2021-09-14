@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const Footer = () => {
+interface FooterProps {
+  color?: string;
+}
+
+const Footer = ({ color }: FooterProps) => {
   return (
-    <StyledFooter>
+    <StyledFooter $color={color}>
       <FooterSection>
         <MoeHeading>MOE ALS</MoeHeading>
         <TitleHeading>
@@ -36,14 +40,18 @@ const Footer = () => {
   );
 };
 
-const StyledFooter = styled.footer`
+interface StyledFooterProps {
+  $color?: string;
+}
+
+const StyledFooter = styled.footer<StyledFooterProps>`
   position: relative;
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  border-top: 2px solid ${({ theme }) => theme.color4};
-  color: ${({ theme }) => theme.color4};
+  border-top: 2px solid ${({ theme, $color }) => $color || theme.color4};
+  color: ${({ theme, $color }) => $color || theme.color4};
   display: flex;
   z-index: 1;
 `;
