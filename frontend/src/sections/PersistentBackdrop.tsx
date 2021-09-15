@@ -48,33 +48,37 @@ const PersistentBackdrop = () => {
     <FixedContainer>
       <PersistentCanvas ref={persistCanvasRef} />
       <Portal onMount={onMount}>
-        <CanvasContainer ref={containerRef}>
-          <FixedCanvas ref={canvasRef} />
-          <SVGOverlay
-            ref={overlayRef}
-            width="100%"
-            height="100%"
-            viewBox="0 0 1080 1080"
-          >
-            <path d="M1080,0L0,0L0,1080L1080,1080L1080,0ZM494.672,702.151L566.371,674.76L675.934,854.415C675.934,854.415 815.304,803.657 828.193,830.242C841.083,856.827 858.001,924.498 803.22,925.304C748.438,926.109 607.457,925.304 607.457,925.304L494.672,702.151ZM305.069,564.717C305.069,564.717 320.212,490.868 341.035,514.53C361.857,538.192 404.554,613.91 404.554,613.91C404.554,613.91 493.418,555.276 511.401,564.717C529.384,574.158 545.978,622.13 538.628,639.789C531.277,657.448 437.211,686.166 437.211,686.166C437.211,686.166 552.1,829.707 526.545,851.476C500.99,873.246 457.669,883.657 437.211,873.246C416.753,862.834 375.275,720.641 375.275,720.641C375.275,720.641 290.303,810.21 264.749,797.906C239.194,785.602 209.853,756.764 211.746,734.27C213.639,711.776 345.767,656.502 345.767,656.502L305.069,564.717ZM917.457,649.283C1134.53,669.622 960.405,527.291 803.557,581.712C740.576,603.565 919.752,718.964 919.752,718.964C919.752,718.964 741.983,670.567 737.33,733.039C732.677,795.511 950.918,856.193 991.234,806.784C1031.55,757.375 984.01,684.495 917.457,649.283ZM570.278,259.756C570.278,259.756 689.648,388.477 538.628,554.111C546.616,602.381 669.658,769.908 718.875,706.494C768.092,643.08 703.376,570.792 649.427,535.773C670.25,532.933 807.415,599.609 831.077,512.533C854.739,425.457 686.903,390.641 686.903,390.641C686.903,390.641 866.526,386.584 838.131,292.882C809.737,199.181 656.407,211.485 570.278,259.756ZM218.004,596.779C238.377,596.779 254.917,613.319 254.917,633.691C254.917,654.064 238.377,670.604 218.004,670.604C197.632,670.604 181.092,654.064 181.092,633.691C181.092,613.319 197.632,596.779 218.004,596.779ZM182.405,464.825C182.405,464.825 195.834,617.465 130.768,603.077C65.702,588.689 25.738,383.52 103.46,269.389C181.183,155.257 189.735,370.29 189.735,370.29C189.735,370.29 199.482,191.548 244.625,208.429C289.768,225.31 397.698,387.173 371.123,445.4C344.547,503.627 265.839,348.9 265.839,348.9C265.839,348.9 319.749,564.6 268.664,564.717C217.578,564.834 182.405,464.825 182.405,464.825ZM484.372,189.54C416.201,127.526 249.648,156.389 296.164,207.304C423.004,346.139 415.192,424.531 375.275,477.762C330.252,537.804 487.801,587.294 551.44,493.557C624.09,386.548 574.356,271.398 484.372,189.54Z" />
-          </SVGOverlay>
-        </CanvasContainer>
-        <NavBar id={IDs.Navbar}>
-          <NavList>
-            <NavItem>
-              <NavLink href={`#${IDs.Intro}`}>Home</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href={`#${IDs.About}`}>About</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href={`#${IDs.Projects}`}>Projects</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href={`#${IDs.Contact}`}>Contact</NavLink>
-            </NavItem>
-          </NavList>
-        </NavBar>
+        <Appbar>
+          <AppbarContent>
+            <CanvasContainer ref={containerRef}>
+              <FixedCanvas ref={canvasRef} />
+              <SVGOverlay
+                ref={overlayRef}
+                width="100%"
+                height="100%"
+                viewBox="0 0 1080 1080"
+              >
+                <path d="M1080,0L0,0L0,1080L1080,1080L1080,0ZM494.672,702.151L566.371,674.76L675.934,854.415C675.934,854.415 815.304,803.657 828.193,830.242C841.083,856.827 858.001,924.498 803.22,925.304C748.438,926.109 607.457,925.304 607.457,925.304L494.672,702.151ZM305.069,564.717C305.069,564.717 320.212,490.868 341.035,514.53C361.857,538.192 404.554,613.91 404.554,613.91C404.554,613.91 493.418,555.276 511.401,564.717C529.384,574.158 545.978,622.13 538.628,639.789C531.277,657.448 437.211,686.166 437.211,686.166C437.211,686.166 552.1,829.707 526.545,851.476C500.99,873.246 457.669,883.657 437.211,873.246C416.753,862.834 375.275,720.641 375.275,720.641C375.275,720.641 290.303,810.21 264.749,797.906C239.194,785.602 209.853,756.764 211.746,734.27C213.639,711.776 345.767,656.502 345.767,656.502L305.069,564.717ZM917.457,649.283C1134.53,669.622 960.405,527.291 803.557,581.712C740.576,603.565 919.752,718.964 919.752,718.964C919.752,718.964 741.983,670.567 737.33,733.039C732.677,795.511 950.918,856.193 991.234,806.784C1031.55,757.375 984.01,684.495 917.457,649.283ZM570.278,259.756C570.278,259.756 689.648,388.477 538.628,554.111C546.616,602.381 669.658,769.908 718.875,706.494C768.092,643.08 703.376,570.792 649.427,535.773C670.25,532.933 807.415,599.609 831.077,512.533C854.739,425.457 686.903,390.641 686.903,390.641C686.903,390.641 866.526,386.584 838.131,292.882C809.737,199.181 656.407,211.485 570.278,259.756ZM218.004,596.779C238.377,596.779 254.917,613.319 254.917,633.691C254.917,654.064 238.377,670.604 218.004,670.604C197.632,670.604 181.092,654.064 181.092,633.691C181.092,613.319 197.632,596.779 218.004,596.779ZM182.405,464.825C182.405,464.825 195.834,617.465 130.768,603.077C65.702,588.689 25.738,383.52 103.46,269.389C181.183,155.257 189.735,370.29 189.735,370.29C189.735,370.29 199.482,191.548 244.625,208.429C289.768,225.31 397.698,387.173 371.123,445.4C344.547,503.627 265.839,348.9 265.839,348.9C265.839,348.9 319.749,564.6 268.664,564.717C217.578,564.834 182.405,464.825 182.405,464.825ZM484.372,189.54C416.201,127.526 249.648,156.389 296.164,207.304C423.004,346.139 415.192,424.531 375.275,477.762C330.252,537.804 487.801,587.294 551.44,493.557C624.09,386.548 574.356,271.398 484.372,189.54Z" />
+              </SVGOverlay>
+            </CanvasContainer>
+            <NavBar id={IDs.Navbar}>
+              <NavList>
+                <NavItem>
+                  <NavLink href={`#${IDs.Intro}`}>Home</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href={`#${IDs.About}`}>About</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href={`#${IDs.Projects}`}>Projects</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href={`#${IDs.Contact}`}>Contact</NavLink>
+                </NavItem>
+              </NavList>
+            </NavBar>
+          </AppbarContent>
+        </Appbar>
       </Portal>
     </FixedContainer>
   );
@@ -216,6 +220,9 @@ const BuildAnimation = (
 
   const model = waveModel.current;
 
+  const { width } = container.current.parentElement.getBoundingClientRect();
+  const height = window.innerHeight;
+
   timeline.fromTo(
     model.position,
     { y: -model.userData.height },
@@ -226,14 +233,14 @@ const BuildAnimation = (
   timeline.fromTo(
     container.current,
     {
-      x: "150%",
-      y: "75%",
-      scale: "1",
+      x: (width - 360) / 2,
+      y: (height - 360) / 2,
+      scale: 1,
     },
     {
-      x: "32px",
-      y: "32px",
-      scale: ".2",
+      x: "16px",
+      y: "16px",
+      scale: 64 / 360,
     },
     3
   );
@@ -301,12 +308,12 @@ const buildBGWaveAnimation = (
     0.5
   );
 
-  timeline.fromTo(
-    `#${IDs.Navbar}`,
-    { color: oldColor },
-    { color: newColor },
-    0.33
-  );
+  // timeline.fromTo(
+  //   `#${IDs.Navbar}`,
+  //   { color: oldColor },
+  //   { color: newColor },
+  //   0.33
+  // );
 
   ScrollTrigger.create({
     trigger: start,
@@ -434,12 +441,31 @@ const FixedContainer = styled.div`
   justify-content: center;
 `;
 
+const Appbar = styled.nav`
+  width: 100%;
+  height: 96px;
+  background: ${({ theme }) => theme.color4};
+`;
+
+const AppbarContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 96px;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+`;
+
 const CanvasContainer = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 25vw;
-  height: 25vw;
+  width: 360px;
+  height: 360px;
   background-color: ${({ theme }) => theme.color1};
   transform-origin: top left;
   z-index: 10000;
@@ -449,8 +475,8 @@ const SVGOverlay = styled.svg`
   position: absolute;
   top: -0.5vw;
   left: -0.5vw;
-  width: 26vw;
-  height: 26vw;
+  width: calc(360px + 1vw);
+  height: calc(360px + 1vw);
 
   fill-rule: evenodd;
   clip-rule: evenodd;
@@ -461,8 +487,8 @@ const SVGOverlay = styled.svg`
 
 const FixedCanvas = styled.canvas`
   position: absolute;
-  width: 25vw;
-  height: 25vw;
+  width: 360px;
+  height: 360px;
 `;
 
 const PersistentCanvas = styled.canvas`
@@ -472,16 +498,14 @@ const PersistentCanvas = styled.canvas`
 `;
 
 const NavBar = styled.nav`
-  position: absolute;
-  right: 64px;
-  top: 32px;
-  height: 64px;
   display: flex;
+  align-self: flex-end;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.color1};
   z-index: 10000;
+  width: fit-content;
 `;
 
 const NavList = styled.ul`
@@ -498,7 +522,7 @@ const NavItem = styled.li`
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 400;
-  margin-left: 32px;
+  margin-right: 32px;
 `;
 
 const NavLink = styled.a`

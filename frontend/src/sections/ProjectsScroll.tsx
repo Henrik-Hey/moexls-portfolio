@@ -81,25 +81,27 @@ const ProjectsScroller = () => {
           ))}
         </ItemScroller>
         <ItemScroller heading={`UX / UI`} ref={scroll2} reversed href={"/UIUX"}>
-          {projects.sections.user_interface.slice(0, 8).map((image, idx) => (
+          {projects.sections.thumbnails_UIUX.slice(0, 8).map((image, idx) => (
             <Item key={`user_interface@idx=${idx}`}>
               <StyledImage width={300} height={300} src={image.imageURL} />
             </Item>
           ))}
         </ItemScroller>
         <ItemScroller heading={`Photography`} ref={scroll3}>
-          {projects.sections.photos.slice(0, 8).map((image, idx) => (
+          {projects.sections.thumbnails_photos.slice(0, 8).map((image, idx) => (
             <Item key={`photos@idx=${idx}`}>
               <StyledImage width={300} height={300} src={image.imageURL} />
             </Item>
           ))}
         </ItemScroller>
         <ItemScroller heading={`Illustrations`} ref={scroll4} reversed>
-          {projects.sections.illustrations.slice(0, 8).map((image, idx) => (
-            <Item key={`illustrations@idx=${idx}`}>
-              <StyledImage width={300} height={300} src={image.imageURL} />
-            </Item>
-          ))}
+          {projects.sections.thumbnails_illustrations
+            .slice(0, 8)
+            .map((image, idx) => (
+              <Item key={`illustrations@idx=${idx}`}>
+                <StyledImage width={300} height={300} src={image.imageURL} />
+              </Item>
+            ))}
         </ItemScroller>
       </ContentContainer>
     </Container>

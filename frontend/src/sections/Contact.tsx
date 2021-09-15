@@ -11,15 +11,10 @@ const Contact = () => {
       <ContentContainer>
         <HeadingContent>
           <Heading>
-            Need some design
-            <br /> work done? Send me
-            <br /> an email & let’s chat<Highlight>!</Highlight>
+            <Highlight>Need some design</Highlight>
+            <br /> <Highlight>work done?</Highlight> Send me
+            <br /> an email & let’s chat!
           </Heading>
-          <BigMoe>
-            <BigMoeBG>
-              <BigMoeImage src="/MOE.png" height={400} width={400} />
-            </BigMoeBG>
-          </BigMoe>
         </HeadingContent>
         <FeedContainer>
           <FeedContent>
@@ -110,7 +105,6 @@ const FeedAnim = keyframes`
 
 const FeedItem = styled.a`
   text-decoration: none;
-  flex-shrink: 0;
   font-family: Buffalo;
   font-style: normal;
   font-weight: normal;
@@ -124,7 +118,7 @@ const FeedItem = styled.a`
   animation: ${FeedAnim} linear 10s infinite;
 
   &::after {
-    content: " | ";
+    content: "|";
   }
 `;
 

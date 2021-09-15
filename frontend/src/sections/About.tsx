@@ -48,8 +48,7 @@ const Container = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  margin: 32px;
-  width: calc(100% - 64px);
+  width: calc(100%);
   height: 100vh;
   max-width: 960px;
   display: flex;
@@ -77,8 +76,8 @@ const ProgramContainer = styled.div`
 `;
 
 const ProgramImage = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
   margin-right: 8px;
 `;

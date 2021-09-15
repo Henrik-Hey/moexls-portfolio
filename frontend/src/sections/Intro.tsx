@@ -91,8 +91,6 @@ const HeadingContainer = styled.header`
   position: relative;
   width: 100%;
   max-width: 930px;
-  margin-left: 32px;
-  margin-right: 32px;
 `;
 
 const HeadingContent = styled.h1`

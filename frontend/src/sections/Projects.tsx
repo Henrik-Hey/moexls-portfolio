@@ -37,8 +37,7 @@ const Container = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  margin: 32px;
-  width: calc(100% - 64px);
+  width: calc(100%);
   height: 100vh;
   max-width: 960px;
   display: flex;

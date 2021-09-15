@@ -248,41 +248,160 @@
         "title": "Photo40"
       }
     ],
-    "illustrations": [
+    "thumbnails_illustrations": [
       {
-        "imageURL": "/illustrations/thumbnailillustration1.png",
+        "imageURL": "/thumbnails/illustration_TN1.png",
         "title": "thumbnail illustration 1",
         "description": "pink and blue illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration2.png",
+        "imageURL": "/thumbnails/illustration_TN2.png",
         "title": "thumbnail illustration 2",
         "description": "red and dark green illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration3.png",
+        "imageURL": "/thumbnails/illustration_TN3.png",
         "title": "thumbnail illustration 3",
         "description": "pink and yellow illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration4.png",
+        "imageURL": "/thumbnails/illustration_TN4.png",
         "title": "thumbnail illustration 4",
         "description": "yellow and blue illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration5.png",
+        "imageURL": "/thumbnails/illustration_TN5.png",
         "title": "thumbnail illustration 5",
         "description": "red and dark blue illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration6.png",
+        "imageURL": "/thumbnails/illustration_TN6.png",
         "title": "thumbnail illustration 6",
         "description": "cyan and dark blue illustration"
       },
       {
-        "imageURL": "/illustrations/thumbnailillustration7.png",
+        "imageURL": "/thumbnails/illustration_TN7.png",
         "title": "thumbnail illustration 7",
         "description": "pink and cream illustration"
+      },
+      {
+        "imageURL": "/thumbnails/illustration_TN8.png",
+        "title": "thumbnail illustration 8",
+        "description": "pink and cream illustration"
+      },
+      {
+        "imageURL": "/thumbnails/illustration_TN9.png",
+        "title": "thumbnail illustration 9",
+        "description": "pink and cream illustration"
+      },
+      {
+        "imageURL": "/thumbnails/illustration_TN10.png",
+        "title": "thumbnail illustration 10",
+        "description": "pink and cream illustration"
+      }
+    ],
+    "thumbnails_photos": [
+      {
+        "imageURL": "/thumbnails/photography_TN1.png",
+        "title": "thumbnail photo 1",
+        "description": "bw girl 1"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN2.png",
+        "title": "thumbnail photo 2",
+        "description": "bw guy 1"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN3.png",
+        "title": "thumbnail photo 3",
+        "description": "bw guy 2"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN4.png",
+        "title": "thumbnail photo 4",
+        "description": "bw guy 3"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN5.png",
+        "title": "thumbnail photo 5",
+        "description": "bw guy 4"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN6.png",
+        "title": "thumbnail photo 6",
+        "description": "bw guy 5"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN7.png",
+        "title": "thumbnail photo 7",
+        "description": "bw guy 6"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN8.png",
+        "title": "thumbnail photo 8",
+        "description": "bw girl 2"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN9.png",
+        "title": "thumbnail photo 9",
+        "description": "bw couple 1"
+      },
+      {
+        "imageURL": "/thumbnails/photography_TN10.png",
+        "title": "thumbnail photo 10",
+        "description": "bw guy 7"
+      }
+    ],
+    "thumbnails_UIUX": [
+      {
+        "imageURL": "/thumbnails/UI_TN1.png",
+        "title": "User interface 1",
+        "description": "Sign in form"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN2.png",
+        "title": "User interface 2",
+        "description": "checkout form"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN3.png",
+        "title": "User interface 3",
+        "description": "nike shoe"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN4.png",
+        "title": "User interface 4",
+        "description": "nike shoe 2"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN5.png",
+        "title": "User interface 5",
+        "description": "music player"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN6.png",
+        "title": "User interface 6",
+        "description": "dropbox account"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN7.png",
+        "title": "User interface 7",
+        "description": "bank account"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN8.png",
+        "title": "User interface 8",
+        "description": "coat website"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN9.png",
+        "title": "User interface 9",
+        "description": "404 1"
+      },
+      {
+        "imageURL": "/thumbnails/UI_TN10.png",
+        "title": "User interface 10",
+        "description": "404 2"
       }
     ],
     "posters": [
@@ -468,7 +587,7 @@
         "title": "poster 54"
       }
     ],
-    "user_interface": [
+    "userInterface": [
       {
         "imageURL": "/userInterface/UI1.png",
         "title": "UI1",
