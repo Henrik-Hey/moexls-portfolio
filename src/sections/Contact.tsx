@@ -110,14 +110,14 @@ const FeedContent = styled.div`
 `;
 
 const FeedAnim = keyframes`
-     0% { transform: translate3d(0%, 0, 0); }
-  100% { transform: translate3d(-200%, 0, 0); }
+     0% { transform: translateX(0%); }
+  100% { transform: translateX(-200%); }
 `;
 
 const FeedItem = styled.a`
+  font-style: normal;
   text-decoration: none;
   font-family: Buffalo;
-  font-style: normal;
   font-weight: normal;
   font-size: 5rem;
   margin-top: 32px;
