@@ -1,22 +1,12 @@
+import React from "react";
 import styled from "styled-components";
 
 import Layout from "../src/shared/Layout";
 import projects from "../public/projects.json";
-import { useEffect, useState } from "react";
 
 export default function UIUX() {
-  const [cols, setCols] = useState([]);
-
-  useEffect(() => {
-    const _cols = [];
-    projects?.sections?.userInterface?.forEach((image) => {
-      _cols.push(<StyledImage src={image.imageURL} />);
-    });
-    setCols(_cols);
-  }, []);
-
   return (
-    <Layout noAnim background="FBFBFB">
+    <Layout noAnim background="FBFBFB" footerColor="141414">
       <Container>
         <HeadingContainer>
           <HeadingContent>
@@ -32,7 +22,11 @@ export default function UIUX() {
           </HeadingSub>
         </HeadingContainer>
       </Container>
-      <Row>{cols}</Row>
+      <Row>
+        {projects?.sections?.userInterface?.map((image, idx) => (
+          <StyledImage key={`UIUX-image@idx=${idx}`} src={image.imageURL} />
+        ))}
+      </Row>
     </Layout>
   );
 }

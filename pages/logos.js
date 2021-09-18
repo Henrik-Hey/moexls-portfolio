@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 import Layout from "../src/shared/Layout";
@@ -19,7 +20,7 @@ export default function Logos() {
   }, []);
 
   return (
-    <Layout noAnim background="FBFBFB">
+    <Layout noAnim background="FBFBFB" footerColor="141414">
       <Container>
         <HeadingContainer>
           <HeadingContent>

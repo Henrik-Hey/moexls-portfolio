@@ -79,29 +79,8 @@ const Highlight = styled.span`
   color: ${({ theme }) => theme.color3};
 `;
 
-const BigMoe = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const BigMoeBG = styled.div`
-  background: ${({ theme }) => theme.color4};
-  overflow: hidden;
-  height: 100%;
-  border-radius: 50%;
-`;
-
-const BigMoeImage = styled(Image)`
-  height: 100%;
-  object-fit: cover;
-`;
-
 const FeedContainer = styled.div`
-  overflow: hidden; /* HIDE SCROLL BAR */
-  transition: opacity 0.3s;
+  overflow: hidden;
 `;
 
 const FeedContent = styled.div`
