@@ -55,6 +55,7 @@ const Container = styled.section`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 
   @media only screen and (max-width: 720px) {
     padding-top: 20vh;
@@ -65,7 +66,8 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   width: calc(100%);
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   max-width: 960px;
   display: flex;
   flex-direction: column;
@@ -77,6 +79,10 @@ const Heading = styled.h2`
   color: ${({ theme }) => theme.color4};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 10vw;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -84,6 +90,10 @@ const SubHeading = styled.p`
   font-size: 1.5rem;
   font-weight: 500;
   color: ${({ theme }) => theme.color4};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 5vw;
+  }
 `;
 
 const ProgramContainer = styled.div`

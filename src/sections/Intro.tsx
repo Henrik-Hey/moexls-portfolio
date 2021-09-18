@@ -87,9 +87,9 @@ const Container = styled.section`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 
   @media only screen and (max-width: 720px) {
-    padding-top: 20vh;
     width: calc(100vw - 64px);
   }
 `;
@@ -106,6 +106,10 @@ const HeadingContent = styled.h1`
   color: ${({ theme }) => theme.color1};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 10vw;
+  }
 `;
 
 const Highlight = styled.span`
@@ -117,6 +121,10 @@ const HeadingSub = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   color: ${({ theme }) => theme.color1};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 5vw;
+  }
 `;
 
 export default Intro;

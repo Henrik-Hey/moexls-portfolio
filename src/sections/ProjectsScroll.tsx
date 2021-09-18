@@ -117,12 +117,14 @@ const Container = styled.section`
   z-index: 1;
   width: 100vw;
   margin-top: 10vh;
+  height: fit-content;
   min-height: 225vh;
 `;
 
 const ContentContainer = styled.div`
   width: calc(100%);
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
 `;
 
 const Item = styled.div`

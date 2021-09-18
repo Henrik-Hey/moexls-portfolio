@@ -79,6 +79,10 @@ const HeadingContent = styled.h1`
   color: ${({ theme }) => theme.color4};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 10vw;
+  }
 `;
 
 const Highlight = styled.span`
@@ -90,6 +94,10 @@ const HeadingSub = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   color: ${({ theme }) => theme.color4};
+
+  @media only screen and (max-width: 720px) {
+    font-size: 5vw;
+  }
 `;
 
 const Row = styled.div`

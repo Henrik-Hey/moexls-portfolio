@@ -38,10 +38,12 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 
   @media only screen and (max-width: 720px) {
     width: calc(100vw - 64px);
@@ -50,7 +52,8 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   width: calc(100%);
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,10 +65,14 @@ const HeadingContent = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-size: 5rem;
+  font-size: 5.65rem;
   color: ${({ theme }) => theme.color1};
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 10vw;
+  }
 `;
 
 const Highlight = styled.span`
