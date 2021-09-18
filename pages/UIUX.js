@@ -54,7 +54,6 @@ const Container = styled.section`
   margin-right: auto;
 
   @media only screen and (max-width: 720px) {
-    padding-top: 20vh;
     width: calc(100vw - 64px);
   }
 `;

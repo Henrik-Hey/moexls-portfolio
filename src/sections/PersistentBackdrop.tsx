@@ -555,10 +555,10 @@ const CanvasContainer = styled.div`
 
 const SVGOverlay = styled.svg`
   position: absolute;
-  top: -0.5vw;
-  left: -0.5vw;
-  width: calc(360px + 1vw);
-  height: calc(360px + 1vw);
+  top: -8px;
+  left: -8px;
+  width: calc(360px + 16px);
+  height: calc(360px + 16px);
 
   fill-rule: evenodd;
   clip-rule: evenodd;
