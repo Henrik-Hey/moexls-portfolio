@@ -551,6 +551,7 @@ const CanvasContainer = styled.a`
   height: 360px;
   background-color: ${({ theme }) => theme.color1};
   transform-origin: top left;
+  transform: scale(0);
   z-index: 10000;
 `;
 

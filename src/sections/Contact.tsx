@@ -52,7 +52,6 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   width: calc(100%);
-  max-width: 960px;
   height: fit-content;
   min-height: 100vh;
   display: flex;
@@ -62,6 +61,7 @@ const ContentContainer = styled.div`
 
 const HeadingContent = styled.div`
   width: 100%;
+  max-width: 960px;
   display: flex;
 `;
 

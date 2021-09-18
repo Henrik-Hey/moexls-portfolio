@@ -9,6 +9,7 @@ interface ItemScrollerProps {
   href?: string;
 }
 
+// eslint-disable-next-line react/display-name
 const ItemScroller = forwardRef(
   (
     { heading, children, href }: ItemScrollerProps,
