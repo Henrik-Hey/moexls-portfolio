@@ -308,11 +308,13 @@ const BuildAnimation = (
       x: (width - 360) / 2,
       y: (height - 360) / 2,
       scale: 1,
+      autoAlpha: 1,
     },
     {
       x: "16px",
       y: "16px",
       scale: 64 / 360,
+      autoAlpha: 1,
     },
     3
   );
@@ -551,7 +553,7 @@ const CanvasContainer = styled.a`
   height: 360px;
   background-color: ${({ theme }) => theme.color1};
   transform-origin: top left;
-  transform: scale(0);
+  visibility: hidden;
   z-index: 10000;
 `;
 
