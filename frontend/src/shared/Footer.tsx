@@ -53,7 +53,12 @@ const StyledFooter = styled.footer<StyledFooterProps>`
   border-top: 2px solid ${({ theme, $color }) => $color || theme.color4};
   color: ${({ theme, $color }) => $color || theme.color4};
   display: flex;
+  flex-direction: row;
   z-index: 1;
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+  }
 `;
 
 const FooterSection = styled.div`
@@ -87,6 +92,10 @@ const NavLayout = styled.div`
   width: 100%;
   height: 100%;
   color: inherit;
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+  }
 `;
 
 const NavCol = styled.div`

@@ -78,13 +78,19 @@ const Container = styled.section`
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+
+  @media only screen and (max-width: 720px) {
+    padding-top: 20vh;
+  }
 `;
 
 const HeadingContainer = styled.header`

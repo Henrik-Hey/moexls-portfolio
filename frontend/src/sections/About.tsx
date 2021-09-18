@@ -2,17 +2,26 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import IDs from "../IDs";
+import useWindowSize from "../_hooks/useWindowSize";
 
 const About = () => {
+  const { width, height } = useWindowSize();
+
   useEffect(() => {
-    ScrollTrigger.create({
+    if (width < 720) return;
+
+    const scrollTrigger = ScrollTrigger.create({
       trigger: `#${IDs.About}`,
       endTrigger: `#${IDs.About}`,
       start: "top top",
       end: "bottom bottom",
       pin: `#${IDs.About}-content`,
     });
-  }, []);
+
+    return () => {
+      scrollTrigger.kill();
+    };
+  }, [width, height]);
 
   return (
     <Container id={IDs.About}>
@@ -41,7 +50,8 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   width: 100vw;
-  height: 200vh;
+  height: fit-content;
+  min-height: 200vh;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;

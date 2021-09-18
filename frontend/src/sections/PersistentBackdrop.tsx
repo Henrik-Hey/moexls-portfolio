@@ -9,6 +9,7 @@ import {
 
 import IDs from "../IDs";
 import Portal from "../shared/Portal";
+import useWindowSize from "../_hooks/useWindowSize";
 
 const PersistentBackdrop = () => {
   const waveModel = useRef<THREE.Mesh>(
@@ -17,6 +18,19 @@ const PersistentBackdrop = () => {
   const waveModels = useRef<THREE.Mesh[]>([]) as React.MutableRefObject<
     THREE.Mesh[]
   >;
+
+  const renderer1 = useRef<THREE.WebGLRenderer>(
+    null
+  ) as React.MutableRefObject<THREE.WebGLRenderer>;
+  const camera1 = useRef<THREE.OrthographicCamera>(
+    null
+  ) as React.MutableRefObject<THREE.OrthographicCamera>;
+  const renderer2 = useRef<THREE.WebGLRenderer>(
+    null
+  ) as React.MutableRefObject<THREE.WebGLRenderer>;
+  const camera2 = useRef<THREE.OrthographicCamera>(
+    null
+  ) as React.MutableRefObject<THREE.OrthographicCamera>;
 
   const canvasRef = useRef<HTMLCanvasElement>(
     null
@@ -32,6 +46,7 @@ const PersistentBackdrop = () => {
   ) as React.MutableRefObject<SVGSVGElement>;
 
   const palette = usePaletteContext();
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -39,10 +54,33 @@ const PersistentBackdrop = () => {
   }, []);
 
   const onMount = () => {
-    InitializePersistentThreeJS(persistCanvasRef, waveModels);
-    InitializeThreeJS(canvasRef, waveModel);
+    InitializePersistentThreeJS(
+      persistCanvasRef,
+      waveModels,
+      renderer1,
+      camera1
+    );
+    InitializeThreeJS(canvasRef, waveModel, renderer2, camera2);
     BuildAnimation(waveModel, containerRef, overlayRef, waveModels, palette);
   };
+
+  useEffect(() => {
+    if (
+      !renderer1.current ||
+      !camera1.current ||
+      !renderer2.current ||
+      !camera2.current
+    )
+      return;
+
+    camera1.current.updateProjectionMatrix();
+    renderer1.current.setSize(width, height);
+    console.log(width, height);
+
+    const container = canvasRef.current.getBoundingClientRect();
+    camera2.current.updateProjectionMatrix();
+    renderer2.current.setSize(container.width, container.height);
+  }, [renderer1, camera1, renderer2, camera2, width, height]);
 
   return (
     <FixedContainer>
@@ -86,7 +124,9 @@ const PersistentBackdrop = () => {
 
 const InitializePersistentThreeJS = (
   canvasRef: React.MutableRefObject<HTMLCanvasElement>,
-  waveModels: React.MutableRefObject<THREE.Mesh[]>
+  waveModels: React.MutableRefObject<THREE.Mesh[]>,
+  rendererRef: React.MutableRefObject<THREE.WebGLRenderer>,
+  cameraRef: React.MutableRefObject<THREE.OrthographicCamera>
 ) => {
   if (!canvasRef.current || !waveModels.current) return;
 
@@ -95,13 +135,20 @@ const InitializePersistentThreeJS = (
     height, // @ts-ignore
   } = canvasRef.current.getBoundingClientRect();
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const camera = (cameraRef.current = new THREE.OrthographicCamera(
+    width / -2,
+    width / 2,
+    height / 2,
+    height / -2,
+    1,
+    1000
+  ));
 
-  const renderer = new THREE.WebGLRenderer({
+  const renderer = (rendererRef.current = new THREE.WebGLRenderer({
     antialias: true,
     canvas: canvasRef.current,
     alpha: true,
-  });
+  }));
 
   renderer.setSize(width, height);
   renderer.setClearColor(0x141414, 0);
@@ -112,8 +159,8 @@ const InitializePersistentThreeJS = (
   camera.position.z = 5;
 
   const waveDepth = -1.5;
-  const waveHeight = visibleHeightAtZDepth(waveDepth, camera);
-  const waveWidth = visibleWidthAtZDepth(waveDepth, camera);
+  const waveHeight = height;
+  const waveWidth = width;
 
   const waves = [];
   const wave2 = generateWaveMesh(
@@ -161,7 +208,9 @@ const InitializePersistentThreeJS = (
 
 const InitializeThreeJS = (
   canvasRef: React.MutableRefObject<HTMLCanvasElement>,
-  waveModel: React.MutableRefObject<THREE.Mesh>
+  waveModel: React.MutableRefObject<THREE.Mesh>,
+  rendererRef: React.MutableRefObject<THREE.WebGLRenderer>,
+  cameraRef: React.MutableRefObject<THREE.OrthographicCamera>
 ) => {
   if (!canvasRef.current) return;
 
@@ -170,13 +219,20 @@ const InitializeThreeJS = (
     height, // @ts-ignore
   } = canvasRef.current.getBoundingClientRect();
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const camera = (cameraRef.current = new THREE.OrthographicCamera(
+    width / -2,
+    width / 2,
+    height / 2,
+    height / -2,
+    1,
+    1000
+  ));
 
-  const renderer = new THREE.WebGLRenderer({
+  const renderer = (rendererRef.current = new THREE.WebGLRenderer({
     antialias: true,
     canvas: canvasRef.current,
     alpha: true,
-  });
+  }));
 
   renderer.setSize(width, height);
   renderer.setClearColor(0x141414, 0);
@@ -187,8 +243,8 @@ const InitializeThreeJS = (
   camera.position.z = 5;
 
   const wave1Depth = -1.5;
-  const wave1Height = visibleHeightAtZDepth(wave1Depth, camera);
-  const wave1Width = visibleWidthAtZDepth(wave1Depth, camera);
+  const wave1Height = height;
+  const wave1Width = width;
   const wave1 = (waveModel.current = generateWaveMesh(
     wave1Depth,
     wave1Width,
@@ -318,7 +374,7 @@ const buildBGWaveAnimation = (
   ScrollTrigger.create({
     trigger: start,
     // endTrigger: end,
-    start: "top-=5% top",
+    start: "top-=15% top",
     animation: timeline,
     toggleActions: "play none none reverse",
   });
@@ -354,8 +410,12 @@ const generateWaveMesh = (
                 void main() {
                     vec3 morphedPos = position;
     
-                    if(morphedPos.y >= 1.0) {
-                      morphedPos.y -= sin(position.x + delta) * ((position.x + 5.0) / 7.0) * seed;
+                    if(morphedPos.y >= 5.0) {
+                      morphedPos.y -= (
+                        (sin((position.x / 50.0) + (delta * 2.0)) * 20.0) + 
+                        (sin((position.x / 70.0) + (delta * 1.5)) * 30.0) + 
+                        (sin((position.x / 150.0) + (delta * 1.25)) * 40.0)
+                      ) * seed;
                     }
     
                     vUv = morphedPos; 
