@@ -70,6 +70,11 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     height: 100vh;
   }
+
+  @keyframes feedAnimation {
+      0% { transform: translateX(0%); }
+    100% { transform: translateX(-200%); }
+  }
 `;
 
 export default Layout;

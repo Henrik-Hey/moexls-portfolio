@@ -109,11 +109,6 @@ const FeedContent = styled.div`
   position: relative;
 `;
 
-const FeedAnim = keyframes`
-     0% { transform: translateX(0%); }
-  100% { transform: translateX(-200%); }
-`;
-
 const FeedItem = styled.a`
   font-style: normal;
   text-decoration: none;
@@ -126,7 +121,7 @@ const FeedItem = styled.a`
   box-sizing: border-box;
   text-align: center;
   color: ${({ theme }) => theme.color1};
-  animation: ${FeedAnim} linear 10s infinite;
+  animation: feedAnimation linear 10s infinite;
 
   &::after {
     content: "|";
