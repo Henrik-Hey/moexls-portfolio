@@ -27,7 +27,7 @@ const About = () => {
     <Container id={IDs.About}>
       <ContentContainer id={`${IDs.About}-content`}>
         <Heading>
-          Welcome to my digital playground / portfolio website :D
+          Welcome to my digital playground & portfolio website :D
         </Heading>
         <SubHeading>
           I’m a freelance designer specializing in branding and marketing, I
