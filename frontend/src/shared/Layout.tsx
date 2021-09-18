@@ -6,7 +6,7 @@ import PersistentBackdrop from "../sections/PersistentBackdrop";
 import IDs from "../IDs";
 import Footer from "./Footer";
 
-const Layout = ({ children, footerColor }) => {
+const Layout = ({ children, footerColor, background, noAnim }) => {
   return (
     <PaletteProvider>
       <Head>
@@ -25,7 +25,7 @@ const Layout = ({ children, footerColor }) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <PersistentBackdrop />
+      <PersistentBackdrop background={background} noAnim={noAnim} />
       {children}
       <Footer color={footerColor} />
       <PortalAnchor id={IDs.Portal} />

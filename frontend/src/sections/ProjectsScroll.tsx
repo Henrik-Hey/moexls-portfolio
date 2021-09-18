@@ -87,7 +87,11 @@ const ProjectsScroller = () => {
             </Item>
           ))}
         </ItemScroller>
-        <ItemScroller heading={`Photography`} ref={scroll3}>
+        <ItemScroller
+          heading={`Photography`}
+          ref={scroll3}
+          href={"/photography"}
+        >
           {projects.sections.thumbnails_photos.slice(0, 8).map((image, idx) => (
             <Item key={`photos@idx=${idx}`}>
               <StyledImage width={300} height={300} src={image.imageURL} />

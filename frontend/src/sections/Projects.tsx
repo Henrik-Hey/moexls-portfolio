@@ -44,6 +44,12 @@ const Container = styled.section`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+
+  @media only screen and (max-width: 720px) {
+    padding-top: 20vh;
+    width: calc(100vw - 64px);
+    min-height: 100vh;
+  }
 `;
 
 const ContentContainer = styled.div`

@@ -42,6 +42,10 @@ const Container = styled.section`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+
+  @media only screen and (max-width: 720px) {
+    width: calc(100vw - 64px);
+  }
 `;
 
 const ContentContainer = styled.div`

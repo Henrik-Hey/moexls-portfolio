@@ -88,7 +88,7 @@
     ],
     "photos": [
       {
-        "imageURL": "/photos/phot1.png",
+        "imageURL": "/photos/phot1.jpg",
         "title": "Photo1"
       },
       {
@@ -96,7 +96,7 @@
         "title": "Photo2"
       },
       {
-        "imageURL": "/photos/phot3.jpg",
+        "imageURL": "/photos/phot3.png",
         "title": "Photo3"
       },
       {
@@ -116,7 +116,7 @@
         "title": "Photo7"
       },
       {
-        "imageURL": "/photos/phot8.jpg",
+        "imageURL": "/photos/phot8.png",
         "title": "Photo8"
       },
       {
@@ -124,7 +124,7 @@
         "title": "Photo9"
       },
       {
-        "imageURL": "/photos/phot10.jpg",
+        "imageURL": "/photos/phot10.png",
         "title": "Photo10"
       },
       {
@@ -180,7 +180,7 @@
         "title": "Photo23"
       },
       {
-        "imageURL": "/photos/phot24.png",
+        "imageURL": "/photos/phot24.jpg",
         "title": "Photo24"
       },
       {
@@ -188,64 +188,12 @@
         "title": "Photo25"
       },
       {
-        "imageURL": "/photos/phot26.png",
+        "imageURL": "/photos/phot26.jpg",
         "title": "Photo26"
       },
       {
-        "imageURL": "/photos/phot27.png",
+        "imageURL": "/photos/phot27.jpg",
         "title": "Photo27"
-      },
-      {
-        "imageURL": "/photos/phot28.png",
-        "title": "Photo28"
-      },
-      {
-        "imageURL": "/photos/phot29.png",
-        "title": "Photo29"
-      },
-      {
-        "imageURL": "/photos/phot30.png",
-        "title": "Photo30"
-      },
-      {
-        "imageURL": "/photos/phot31.png",
-        "title": "Photo31"
-      },
-      {
-        "imageURL": "/photos/phot32.jpg",
-        "title": "Photo32"
-      },
-      {
-        "imageURL": "/photos/phot33.png",
-        "title": "Photo33"
-      },
-      {
-        "imageURL": "/photos/phot34.png",
-        "title": "Photo34"
-      },
-      {
-        "imageURL": "/photos/phot35.png",
-        "title": "Photo35"
-      },
-      {
-        "imageURL": "/photos/phot36.png",
-        "title": "Photo36"
-      },
-      {
-        "imageURL": "/photos/phot37.png",
-        "title": "Photo37"
-      },
-      {
-        "imageURL": "/photos/phot38.png",
-        "title": "Photo38"
-      },
-      {
-        "imageURL": "/photos/phot39.jpg",
-        "title": "Photo39"
-      },
-      {
-        "imageURL": "/photos/phot40.jpg",
-        "title": "Photo40"
       }
     ],
     "thumbnails_illustrations": [

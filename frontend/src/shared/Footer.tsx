@@ -58,6 +58,8 @@ const StyledFooter = styled.footer<StyledFooterProps>`
 
   @media only screen and (max-width: 720px) {
     flex-direction: column;
+    width: calc(100vw - 64px);
+    padding-bottom: 32px;
   }
 `;
 

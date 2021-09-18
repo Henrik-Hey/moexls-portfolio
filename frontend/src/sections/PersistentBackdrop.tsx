@@ -11,7 +11,15 @@ import IDs from "../IDs";
 import Portal from "../shared/Portal";
 import useWindowSize from "../_hooks/useWindowSize";
 
-const PersistentBackdrop = () => {
+interface PersistentBackdropProps {
+  noAnim?: boolean;
+  background?: string;
+}
+
+const PersistentBackdrop = ({
+  noAnim = false,
+  background,
+}: PersistentBackdropProps) => {
   const waveModel = useRef<THREE.Mesh>(
     null
   ) as React.MutableRefObject<THREE.Mesh>;
@@ -54,14 +62,22 @@ const PersistentBackdrop = () => {
   }, []);
 
   const onMount = () => {
-    InitializePersistentThreeJS(
-      persistCanvasRef,
-      waveModels,
-      renderer1,
-      camera1
-    );
+    if (!noAnim)
+      InitializePersistentThreeJS(
+        persistCanvasRef,
+        waveModels,
+        renderer1,
+        camera1
+      );
     InitializeThreeJS(canvasRef, waveModel, renderer2, camera2);
-    BuildAnimation(waveModel, containerRef, overlayRef, waveModels, palette);
+    BuildAnimation(
+      waveModel,
+      containerRef,
+      overlayRef,
+      waveModels,
+      palette,
+      noAnim
+    );
   };
 
   useEffect(() => {
@@ -75,7 +91,6 @@ const PersistentBackdrop = () => {
 
     camera1.current.updateProjectionMatrix();
     renderer1.current.setSize(width, height);
-    console.log(width, height);
 
     const container = canvasRef.current.getBoundingClientRect();
     camera2.current.updateProjectionMatrix();
@@ -83,7 +98,7 @@ const PersistentBackdrop = () => {
   }, [renderer1, camera1, renderer2, camera2, width, height]);
 
   return (
-    <FixedContainer>
+    <FixedContainer $background={background}>
       <PersistentCanvas ref={persistCanvasRef} />
       <Portal onMount={onMount}>
         <Appbar>
@@ -102,16 +117,16 @@ const PersistentBackdrop = () => {
             <NavBar id={IDs.Navbar}>
               <NavList>
                 <NavItem>
-                  <NavLink href={`#${IDs.Intro}`}>Home</NavLink>
+                  <NavLink href={`/#${IDs.Intro}`}>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`#${IDs.About}`}>About</NavLink>
+                  <NavLink href={`/#${IDs.About}`}>About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`#${IDs.Projects}`}>Projects</NavLink>
+                  <NavLink href={`/#${IDs.Projects}`}>Projects</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`#${IDs.Contact}`}>Contact</NavLink>
+                  <NavLink href={`/#${IDs.Contact}`}>Contact</NavLink>
                 </NavItem>
               </NavList>
             </NavBar>
@@ -268,7 +283,8 @@ const BuildAnimation = (
   container: React.MutableRefObject<HTMLDivElement>,
   overlay: React.MutableRefObject<SVGSVGElement>,
   waveModels: React.MutableRefObject<THREE.Mesh[]>,
-  palette: PaletteInterface
+  palette: PaletteInterface,
+  noAnim: boolean
 ) => {
   if (!waveModel.current || !container.current || !overlay.current) return;
 
@@ -300,6 +316,8 @@ const BuildAnimation = (
     },
     3
   );
+
+  if (noAnim) return;
 
   timeline.fromTo(
     `#${IDs.Navbar}`,
@@ -488,14 +506,18 @@ const visibleWidthAtZDepth = (
   return height * camera.aspect;
 };
 
-const FixedContainer = styled.div`
+interface FixedContainerProps {
+  $background?: string;
+}
+
+const FixedContainer = styled.div<FixedContainerProps>`
   position: fixed;
   z-index: 0;
   top: 0px;
   left: 0px;
   width: 100vw;
   height: 100vh;
-  background: ${({ theme }) => theme.color4};
+  background: ${({ theme, $background }) => $background || theme.color4};
   display: flex;
   flex-direction: column;
   justify-content: center;

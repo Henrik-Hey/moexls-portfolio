@@ -52,6 +52,10 @@ const HeadingContent = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.color4};
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 720px) {
+    width: calc(100vw - 64px);
+  }
 `;
 
 const Heading = styled.h3`

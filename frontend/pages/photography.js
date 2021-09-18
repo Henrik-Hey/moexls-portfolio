@@ -4,13 +4,27 @@ import Layout from "../src/shared/Layout";
 import projects from "../public/projects.json";
 import { useEffect, useState } from "react";
 
-export default function UIUX() {
+export default function Photography() {
   const [cols, setCols] = useState([]);
 
   useEffect(() => {
+    let currentCol = 0;
+    let currentSegmentChildren = [];
     const _cols = [];
-    projects?.sections?.userInterface?.forEach((image) => {
-      _cols.push(<StyledImage src={image.imageURL} />);
+    projects?.sections?.photos?.forEach((image) => {
+      if (currentCol > 1) {
+        _cols.push(<SegmentRow>{currentSegmentChildren}</SegmentRow>);
+        _cols.push(
+          <SegmentRow>
+            <StyledImageFull src={image.imageURL} />
+          </SegmentRow>
+        );
+        currentCol = 0;
+        currentSegmentChildren = [];
+      } else {
+        currentSegmentChildren.push(<StyledImage src={image.imageURL} />);
+        currentCol++;
+      }
     });
     setCols(_cols);
   }, []);
@@ -20,15 +34,22 @@ export default function UIUX() {
       <Container>
         <HeadingContainer>
           <HeadingContent>
-            User Interface <Highlight>&</Highlight>
-            <br /> User Experience
+            Profess
+            <wbr />
+            ional
+            <br /> Photo
+            <wbr />
+            graphy
           </HeadingContent>
           <HeadingSub>
-            This section mainly consists of Personal UI/ UX projects. I did
-            these during my freetime to explore different methods of design.
-            Keeping the UI fresh, modern, and clean was my main priority, but at
-            the same time I wanted to make sure it looked unique, professional,
-            and well-polished.
+            This section mainly consists of the studio photography I did while
+            running my freelance business. I worked with many different models,
+            and expiremented a lot with different types of lenses, lights, and
+            poses.
+            <br />
+            <br />
+            My experience also allowed me to excel at programs like photoshop
+            and lightroom due to the edit nature of the photos that I took.
           </HeadingSub>
         </HeadingContainer>
       </Container>
@@ -54,7 +75,6 @@ const Container = styled.section`
   margin-right: auto;
 
   @media only screen and (max-width: 720px) {
-    padding-top: 20vh;
     width: calc(100vw - 64px);
   }
 `;
@@ -85,12 +105,8 @@ const HeadingSub = styled.h2`
 `;
 
 const Row = styled.div`
-  display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-
+  flex-direction: column;
   width: 100vw;
   max-width: 1280px;
   margin-left: auto;
@@ -103,8 +119,20 @@ const Row = styled.div`
 `;
 
 const StyledImage = styled.img`
+  width: calc(50% - 16px);
+  margin: 8px;
+  flex: 1;
+  object-fit: cover;
+`;
+
+const StyledImageFull = styled.img`
+  width: calc(100% - 16px);
+  margin: 8px;
+  flex: 2;
+`;
+
+const SegmentRow = styled.div`
+  display: flex;
   width: 100%;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  border-radius: 32px;
+  height: fit-content;
 `;
