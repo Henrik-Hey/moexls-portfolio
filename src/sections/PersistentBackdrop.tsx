@@ -46,9 +46,9 @@ const PersistentBackdrop = ({
   const persistCanvasRef = useRef<HTMLCanvasElement>(
     null
   ) as React.MutableRefObject<HTMLCanvasElement>;
-  const containerRef = useRef<HTMLDivElement>(
+  const containerRef = useRef<HTMLAnchorElement>(
     null
-  ) as React.MutableRefObject<HTMLDivElement>;
+  ) as React.MutableRefObject<HTMLAnchorElement>;
   const overlayRef = useRef<SVGSVGElement>(
     null
   ) as React.MutableRefObject<SVGSVGElement>;
@@ -103,7 +103,7 @@ const PersistentBackdrop = ({
       <Portal onMount={onMount}>
         <Appbar>
           <AppbarContent>
-            <CanvasContainer ref={containerRef}>
+            <CanvasContainer ref={containerRef} href="/">
               <FixedCanvas ref={canvasRef} />
               <SVGOverlay
                 ref={overlayRef}
@@ -280,7 +280,7 @@ const InitializeThreeJS = (
 
 const BuildAnimation = (
   waveModel: React.MutableRefObject<THREE.Mesh>,
-  container: React.MutableRefObject<HTMLDivElement>,
+  container: React.MutableRefObject<HTMLAnchorElement>,
   overlay: React.MutableRefObject<SVGSVGElement>,
   waveModels: React.MutableRefObject<THREE.Mesh[]>,
   palette: PaletteInterface,
@@ -542,7 +542,8 @@ const AppbarContent = styled.div`
   position: relative;
 `;
 
-const CanvasContainer = styled.div`
+const CanvasContainer = styled.a`
+  display: block;
   position: absolute;
   top: 0px;
   left: 0px;

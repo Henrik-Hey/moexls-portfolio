@@ -131,6 +131,10 @@ const FeedItem = styled.a`
   &::after {
     content: "|";
   }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 10vw;
+  }
 `;
 
 export default Contact;
