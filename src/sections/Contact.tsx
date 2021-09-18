@@ -12,8 +12,8 @@ const Contact = () => {
         <HeadingContent>
           <Heading>
             <Highlight>Need some design</Highlight>
-            <br /> <Highlight>work done?</Highlight> Send me
-            <br /> an email & let’s chat!
+            <br /> <Highlight>work done?</Highlight> Send me an email & let’s
+            chat!
           </Heading>
         </HeadingContent>
         <FeedContainer>
@@ -52,6 +52,7 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   width: calc(100%);
+  max-width: 960px;
   height: fit-content;
   min-height: 100vh;
   display: flex;
