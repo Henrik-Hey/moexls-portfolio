@@ -11,6 +11,11 @@ import IDs from "../IDs";
 import Portal from "../shared/Portal";
 import useWindowSize from "../_hooks/useWindowSize";
 
+const ScrollToSection = (to: string, noAnim: boolean) => {
+  if (!noAnim) gsap.to(window, { duration: 1, scrollTo: to });
+  else location.href = `/${to}`;
+};
+
 interface PersistentBackdropProps {
   noAnim?: boolean;
   background?: string;
@@ -97,6 +102,8 @@ const PersistentBackdrop = ({
     renderer2.current.setSize(container.width, container.height);
   }, [renderer1, camera1, renderer2, camera2, width, height]);
 
+  const role = noAnim ? "link" : "button";
+
   return (
     <FixedContainer $background={background}>
       <PersistentCanvas ref={persistCanvasRef} />
@@ -117,16 +124,35 @@ const PersistentBackdrop = ({
             <NavBar id={IDs.Navbar}>
               <NavList>
                 <NavItem>
-                  <NavLink href={`/#${IDs.Intro}`}>Home</NavLink>
+                  <NavLink
+                    role={role}
+                    onClick={() => ScrollToSection(`#${IDs.Intro}`, noAnim)}
+                  >
+                    Home
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`/#${IDs.About}`}>About</NavLink>
+                  <NavLink
+                    role={role}
+                    onClick={() => ScrollToSection(`#${IDs.About}`, noAnim)}
+                  >
+                    About
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`/#${IDs.Projects}`}>Projects</NavLink>
+                  <NavLink
+                    role={role}
+                    onClick={() => ScrollToSection(`#${IDs.Projects}`, noAnim)}
+                  >
+                    Projects
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={`/#${IDs.Contact}`}>Contact</NavLink>
+                  <NavLink
+                    onClick={() => ScrollToSection(`#${IDs.Contact}`, noAnim)}
+                  >
+                    Contact
+                  </NavLink>
                 </NavItem>
               </NavList>
             </NavBar>
@@ -295,29 +321,39 @@ const BuildAnimation = (
   const { width } = container.current.parentElement.getBoundingClientRect();
   const height = window.innerHeight;
 
-  timeline.fromTo(
-    model.position,
-    { y: -model.userData.height },
-    { y: 0, duration: 1.5 },
-    1.5
-  );
+  if (!noAnim) {
+    timeline.fromTo(
+      model.position,
+      { y: -model.userData.height },
+      { y: 0, duration: 1.5 },
+      1.5
+    );
 
-  timeline.fromTo(
-    container.current,
-    {
-      x: (width - 360) / 2,
-      y: (height - 360) / 2,
-      scale: 1,
-      autoAlpha: 1,
-    },
-    {
+    timeline.fromTo(
+      container.current,
+      {
+        x: (width - 360) / 2,
+        y: (height - 360) / 2,
+        scale: 1,
+        autoAlpha: 1,
+      },
+      {
+        x: "16px",
+        y: "16px",
+        scale: 64 / 360,
+        autoAlpha: 1,
+      },
+      3
+    );
+  } else {
+    gsap.set(container.current, {
       x: "16px",
       y: "16px",
-      scale: 64 / 360,
       autoAlpha: 1,
-    },
-    3
-  );
+      scale: 64 / 360,
+    });
+    gsap.set(model.position, { y: 0 });
+  }
 
   if (noAnim) return;
 
@@ -611,10 +647,17 @@ const NavItem = styled.li`
   margin-right: 32px;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.button`
+  border: none;
+  background: none;
   text-decoration: none;
   color: inherit;
   font-family: BebasKai;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default PersistentBackdrop;

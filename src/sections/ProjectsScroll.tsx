@@ -98,7 +98,12 @@ const ProjectsScroller = () => {
             </Item>
           ))}
         </ItemScroller>
-        <ItemScroller heading={`Illustrations`} ref={scroll4} reversed>
+        <ItemScroller
+          heading={`Illustrations`}
+          ref={scroll4}
+          reversed
+          href={"/illustrations"}
+        >
           {projects.sections.thumbnails_illustrations
             .slice(0, 8)
             .map((image, idx) => (

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import IDs from "../IDs";
+
 interface FooterProps {
   color?: string;
 }
@@ -19,20 +21,28 @@ const Footer = ({ color }: FooterProps) => {
         <NavLayout>
           <NavCol>
             <NavHeading>SOCIAL</NavHeading>
-            <NavLink>LINKEDIN</NavLink>
-            <NavLink>INSTAGRAM(DESIGN)</NavLink>
-            <NavLink>INSTAGRAM(PHOTOGRAPHY)</NavLink>
-            <NavLink>DRIBBLE</NavLink>
+            <NavLink href="https://www.linkedin.com/in/moe-als-508908193/">
+              LINKEDIN
+            </NavLink>
+            <NavLink href="https://www.instagram.com/design.moexls/">
+              INSTAGRAM(DESIGN)
+            </NavLink>
+            <NavLink href="https://www.instagram.com/moe.xls/">
+              INSTAGRAM(PHOTOGRAPHY)
+            </NavLink>
+            <NavLink href="https://dribbble.com/Moexls">DRIBBBLE</NavLink>
           </NavCol>
           <NavCol>
             <NavHeading>NAVIGATION</NavHeading>
-            <NavLink>HOME</NavLink>
-            <NavLink>ABOUT</NavLink>
-            <NavLink>PROJECTS</NavLink>
+            <NavLink href={`/#${IDs.Intro}`}>HOME</NavLink>
+            <NavLink href={`/#${IDs.About}`}>ABOUT</NavLink>
+            <NavLink href={`/#${IDs.Projects}`}>PROJECTS</NavLink>
           </NavCol>
           <NavCol>
             <NavHeading>CONTACT</NavHeading>
-            <NavLink>DESIGN.MOEXLS@GMAIL.COM</NavLink>
+            <NavLink href="mailto:design.moexls@gmail.com">
+              DESIGN.MOEXLS@GMAIL.COM
+            </NavLink>
           </NavCol>
         </NavLayout>
       </FooterSection>
@@ -50,8 +60,9 @@ const StyledFooter = styled.footer<StyledFooterProps>`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  border-top: 2px solid ${({ theme, $color }) => $color || theme.color4};
-  color: ${({ theme, $color }) => $color || theme.color4};
+  border-top: 2px solid
+    ${({ theme, $color }) => ($color ? `#${$color}` : theme.color4)};
+  color: ${({ theme, $color }) => ($color ? `#${$color}` : theme.color4)};
   display: flex;
   flex-direction: row;
   z-index: 1;
@@ -124,6 +135,7 @@ const NavLink = styled.a`
   font-size: 1.125em;
   letter-spacing: 0.035em;
   color: inherit;
+  text-decoration: none;
 `;
 
 export default Footer;

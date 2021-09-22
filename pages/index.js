@@ -7,7 +7,7 @@ import Contact from "../src/sections/Contact";
 
 export default function Home() {
   return (
-    <Layout footerColor="#FBFBFB">
+    <Layout footerColor="FBFBFB">
       <Intro />
       <About />
       <Projects />
