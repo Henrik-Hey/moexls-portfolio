@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>MOE.XLS</title>
-        <meta property="og:title" content="MOE>XLS" />
+        <meta property="og:title" content="MOE.XLS" />
         <meta
           property="og:image"
           content="https://main.d32hp2apneahky.amplifyapp.com/OpengraphImage.png"
