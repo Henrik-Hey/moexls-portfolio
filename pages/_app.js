@@ -47,12 +47,15 @@ export default function App({ Component, pageProps }) {
         <title>MOE.XLS</title>
         <meta property="og:title" content="MOE>XLS" />
         <meta
-          property="og:url"
-          content="https://www.imdb.com/title/tt0117500/"
+          property="og:image"
+          content="https://main.d32hp2apneahky.amplifyapp.com/OpengraphImage.png"
         />
         <meta
-          property="og:image"
-          content="https://ia.media-imdb.com/images/rock.jpg"
+          property="og:description"
+          content="I use expressive design to create brand assets for small and big
+  businesses. I create everything (and anything) from tiny
+  business cards, to fullscale website prototypes and brand guides to
+  help businesses thrive."
         />
         <link rel="icon" href="/favicon.ico" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
