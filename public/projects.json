@@ -42,48 +42,109 @@
       {
         "imageURL": "/logos/247Dental_logo.png",
         "title": "247 dental logo",
-        "description": "Emergency dental service"
+        "description": "Emergency dental service",
+        "rStart": 3,
+        "rEnd": 4,
+        "cStart": 8,
+        "cEnd": 12
       },
 
       {
         "imageURL": "/logos/Carters_logo.png",
         "title": "Carters printing",
-        "description": "Carters print shop"
+        "description": "Carters print shop",
+        "rStart": 4,
+        "rEnd": 6,
+        "cStart": 4,
+        "cEnd": 12
       },
 
       {
         "imageURL": "/logos/Dixon_logo.png",
         "title": "Dixon detailing",
-        "description": "Dixon car detailing service"
+        "description": "Dixon car detailing service",
+        "rStart": 2,
+        "rEnd": 4,
+        "cStart": 4,
+        "cEnd": 8
       },
 
       {
         "imageURL": "/logos/Northern_logo.png",
         "title": "Northern clothing",
-        "description": "Northerns clothing brand"
+        "description": "Northerns clothing brand",
+        "rStart": 1,
+        "rEnd": 2,
+        "cStart": 4,
+        "cEnd": 8
       },
       {
         "imageURL": "/logos/Saintsbury_logo.png",
         "title": "Saintsbury dental",
-        "description": "Saintsbury family dental"
+        "description": "Saintsbury family dental",
+        "rStart": 1,
+        "rEnd": 3,
+        "cStart": 8,
+        "cEnd": 12
       },
 
       {
         "imageURL": "/logos/Unbound1.png",
         "title": "Unbound clothing 1",
-        "description": "Unbound fashion"
+        "description": "Unbound fashion",
+        "rStart": 9,
+        "rEnd": 11,
+        "cStart": 1,
+        "cEnd": 6
       },
 
       {
         "imageURL": "/logos/Unbound2.png",
         "title": "Unbound clothing 2",
-        "description": "Unbound fashion 2"
+        "description": "Unbound fashion 2",
+        "rStart": 9,
+        "rEnd": 11,
+        "cStart": 6,
+        "cEnd": 12
       },
 
       {
         "imageURL": "/logos/Interior_logo1.jpg",
         "title": "Interior design",
-        "description": "Interior paint services"
+        "description": "Interior paint services",
+        "rStart": 6,
+        "rEnd": 7,
+        "cStart": 1,
+        "cEnd": 12
+      },
+
+      {
+        "imageURL": "/logos/Middlesex_logo.png",
+        "title": "Interior design",
+        "description": "Interior paint services",
+        "rStart": 1,
+        "rEnd": 4,
+        "cStart": 1,
+        "cEnd": 4
+      },
+
+      {
+        "imageURL": "/logos/tooth_vertical.png",
+        "title": "Interior design",
+        "description": "Interior paint services",
+        "rStart": 4,
+        "rEnd": 6,
+        "cStart": 1,
+        "cEnd": 4
+      },
+      {
+        "imageURL": "/logos/unbound_landscape.png",
+        "title": "Interior design",
+        "description": "Interior paint services",
+        "rStart": 7,
+        "rEnd": 9,
+        "cStart": 1,
+        "cEnd": 12
       }
     ],
     "photos": [

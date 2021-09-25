@@ -3,22 +3,8 @@ import styled from "styled-components";
 
 import Layout from "../src/shared/Layout";
 import projects from "../public/projects.json";
-import { useEffect, useState } from "react";
 
 export default function Logos() {
-  const [cols, setCols] = useState([[], [], [], []]);
-
-  useEffect(() => {
-    let currentCol = 0;
-    const _cols = [...cols];
-    projects?.sections?.logos?.forEach((image) => {
-      _cols[currentCol].push(<StyledImage src={image.imageURL} />);
-      currentCol++;
-      if (currentCol > 2) currentCol = 0;
-    });
-    setCols(_cols);
-  }, []);
-
   return (
     <Layout noAnim background="FBFBFB" footerColor="141414">
       <Container>
@@ -38,9 +24,20 @@ export default function Logos() {
         </HeadingContainer>
       </Container>
       <Row>
-        <Column>{cols[0]}</Column>
-        <Column>{cols[1]}</Column>
-        <Column>{cols[2]}</Column>
+        {projects?.sections?.logos?.map((image, idx) => {
+          const { rStart, rEnd, cStart, cEnd, imageURL } = image;
+          return (
+            <GridItem
+              rStart={rStart}
+              rEnd={rEnd}
+              cStart={cStart}
+              cEnd={cEnd}
+              key={`logo@key=${idx}`}
+            >
+              <StyledImage src={imageURL} />
+            </GridItem>
+          );
+        })}
       </Row>
     </Layout>
   );
@@ -101,11 +98,10 @@ const HeadingSub = styled.h2`
 `;
 
 const Row = styled.div`
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(11, 400px);
+  grid-gap: 15px;
 
   width: 100vw;
   max-width: 1280px;
@@ -113,12 +109,25 @@ const Row = styled.div`
   margin-right: auto;
 
   @media only screen and (max-width: 720px) {
+    display: flex;
+    flex-direction: column;
     padding-top: 20vh;
     width: calc(100vw - 64px);
   }
 `;
 
-const StyledImage = styled.img``;
+const GridItem = styled.div`
+  grid-column-start: ${({ cStart }) => cStart};
+  grid-column-end: ${({ cEnd }) => cEnd};
+  grid-row-start: ${({ rStart }) => rStart};
+  grid-row-end: ${({ rEnd }) => rEnd};
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
 const Column = styled.div`
   -ms-flex: 33%; /* IE10 */

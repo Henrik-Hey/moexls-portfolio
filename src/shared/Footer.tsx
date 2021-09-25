@@ -35,8 +35,10 @@ const Footer = ({ color }: FooterProps) => {
           <NavCol>
             <NavHeading>NAVIGATION</NavHeading>
             <NavLink href={`/#${IDs.Intro}`}>HOME</NavLink>
-            <NavLink href={`/#${IDs.About}`}>ABOUT</NavLink>
-            <NavLink href={`/#${IDs.Projects}`}>PROJECTS</NavLink>
+            <NavLink href={`/logos`}>BRAND LOGOS</NavLink>
+            <NavLink href={`/UIUX`}>UX / UI</NavLink>
+            <NavLink href={`/photography`}>PHOTOGRAPHY</NavLink>
+            <NavLink href={`/illustrations`}>ILLUSTRATIONS</NavLink>
           </NavCol>
           <NavCol>
             <NavHeading>CONTACT</NavHeading>
@@ -105,6 +107,7 @@ const NavLayout = styled.div`
   width: 100%;
   height: 100%;
   color: inherit;
+  margin-bottom: 32px;
 
   @media only screen and (max-width: 720px) {
     flex-direction: column;
