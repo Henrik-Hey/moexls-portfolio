@@ -10,11 +10,16 @@ export default function Logos() {
   useEffect(() => {
     let currentCol = 0;
     const _cols = [...cols];
-    projects?.sections?.logos?.forEach((image) => {
+    const logosLength = projects?.sections?.logos?.length;
+    for (let i = 0; i < logosLength - 1; i++) {
+      const image = projects?.sections?.logos?.[i];
       _cols[currentCol].push(<StyledImage src={image.imageURL} />);
       currentCol++;
       if (currentCol > 2) currentCol = 0;
-    });
+    }
+    const lastImage = projects?.sections?.logos?.[logosLength - 1];
+    _cols[3].push(<LastImage src={lastImage.imageURL} />);
+
     setCols(_cols);
   }, []);
 
@@ -41,6 +46,7 @@ export default function Logos() {
         <Column>{cols[1]}</Column>
         <Column>{cols[2]}</Column>
       </Row>
+      <LastRow>{cols[3]}</LastRow>
     </Layout>
   );
 }
@@ -126,7 +132,18 @@ const GridItem = styled.div`
   grid-row-end: ${({ rEnd }) => rEnd};
 `;
 
-const StyledImage = styled.img``;
+const StyledImage = styled.img`
+  width: 100%;
+`;
+
+const LastRow = styled(Row)`
+  padding-top: 0px;
+`;
+
+const LastImage = styled.img`
+  width: calc(100% - (32px + 1%));
+  margin: 16px;
+`;
 
 const Column = styled.div`
   -ms-flex: 33%; /* IE10 */
