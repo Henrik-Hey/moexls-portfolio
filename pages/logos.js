@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Layout from "../src/shared/Layout";
 import projects from "../public/projects.json";
 
 export default function Logos() {
+  const [cols, setCols] = useState([[], [], [], []]);
+
+  useEffect(() => {
+    let currentCol = 0;
+    const _cols = [...cols];
+    projects?.sections?.logos?.forEach((image) => {
+      _cols[currentCol].push(<StyledImage src={image.imageURL} />);
+      currentCol++;
+      if (currentCol > 2) currentCol = 0;
+    });
+    setCols(_cols);
+  }, []);
+
   return (
     <Layout noAnim background="FBFBFB" footerColor="141414">
       <Container>
@@ -24,20 +37,9 @@ export default function Logos() {
         </HeadingContainer>
       </Container>
       <Row>
-        {projects?.sections?.logos?.map((image, idx) => {
-          const { rStart, rEnd, cStart, cEnd, imageURL } = image;
-          return (
-            <GridItem
-              rStart={rStart}
-              rEnd={rEnd}
-              cStart={cStart}
-              cEnd={cEnd}
-              key={`logo@key=${idx}`}
-            >
-              <StyledImage src={imageURL} />
-            </GridItem>
-          );
-        })}
+        <Column>{cols[0]}</Column>
+        <Column>{cols[1]}</Column>
+        <Column>{cols[2]}</Column>
       </Row>
     </Layout>
   );
@@ -98,10 +100,11 @@ const HeadingSub = styled.h2`
 `;
 
 const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, auto);
-  grid-template-rows: repeat(11, 400px);
-  grid-gap: 15px;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
 
   width: 100vw;
   max-width: 1280px;
@@ -123,11 +126,7 @@ const GridItem = styled.div`
   grid-row-end: ${({ rEnd }) => rEnd};
 `;
 
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
+const StyledImage = styled.img``;
 
 const Column = styled.div`
   -ms-flex: 33%; /* IE10 */
