@@ -35,7 +35,7 @@ const Footer = ({ color }: FooterProps) => {
           <NavCol>
             <NavHeading>NAVIGATION</NavHeading>
             <NavLink href={`/#${IDs.Intro}`}>HOME</NavLink>
-            <NavLink href={`/logos`}>BRAND LOGOS</NavLink>
+            <NavLink href={`/logos`}>BRANDING</NavLink>
             <NavLink href={`/UIUX`}>UX / UI</NavLink>
             <NavLink href={`/photography`}>PHOTOGRAPHY</NavLink>
             <NavLink href={`/illustrations`}>ILLUSTRATIONS</NavLink>

@@ -101,6 +101,7 @@ const HeadingContainer = styled.header`
 `;
 
 const HeadingContent = styled.h1`
+  opacity: 0;
   font-size: 5.75rem;
   font-weight: 900;
   color: ${({ theme }) => theme.color1};
@@ -117,6 +118,7 @@ const Highlight = styled.span`
 `;
 
 const HeadingSub = styled.h2`
+  opacity: 0;
   max-width: 640px;
   font-size: 1.5rem;
   font-weight: 400;

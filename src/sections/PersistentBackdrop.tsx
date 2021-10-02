@@ -11,17 +11,6 @@ import IDs from "../IDs";
 import Portal from "../shared/Portal";
 import useWindowSize from "../_hooks/useWindowSize";
 
-const ScrollToSection = (
-  to: string,
-  noAnim: boolean,
-  setActive: (active: boolean) => void
-) => {
-  if (!noAnim) {
-    gsap.to(window, { duration: 1, scrollTo: to });
-    setActive(false);
-  } else location.href = `/${to}`;
-};
-
 interface PersistentBackdropProps {
   noAnim?: boolean;
   background?: string;
@@ -109,8 +98,6 @@ const PersistentBackdrop = ({
     renderer2.current.setSize(container.width, container.height);
   }, [renderer1, camera1, renderer2, camera2, width, height]);
 
-  const role = noAnim ? "link" : "button";
-
   return (
     <FixedContainer $background={background}>
       <PersistentCanvas ref={persistCanvasRef} />
@@ -131,43 +118,19 @@ const PersistentBackdrop = ({
             <NavBar id={IDs.Navbar} $active={active}>
               <NavList>
                 <NavItem>
-                  <NavLink
-                    role={role}
-                    onClick={() =>
-                      ScrollToSection(`#${IDs.Intro}`, noAnim, setActive)
-                    }
-                  >
-                    Home
-                  </NavLink>
+                  <NavLink href={`/#${IDs.Intro}`}>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink
-                    role={role}
-                    onClick={() =>
-                      ScrollToSection(`#${IDs.About}`, noAnim, setActive)
-                    }
-                  >
-                    About
-                  </NavLink>
+                  <NavLink href={`/logos`}>Branding</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink
-                    role={role}
-                    onClick={() =>
-                      ScrollToSection(`#${IDs.Projects}`, noAnim, setActive)
-                    }
-                  >
-                    Projects
-                  </NavLink>
+                  <NavLink href={`/UIUX`}>UX / UI</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink
-                    onClick={() =>
-                      ScrollToSection(`#${IDs.Contact}`, noAnim, setActive)
-                    }
-                  >
-                    Contact
-                  </NavLink>
+                  <NavLink href={`/photography`}>Photography</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href={`/illustrations`}>Illustrations</NavLink>
                 </NavItem>
               </NavList>
             </NavBar>
@@ -387,26 +350,23 @@ const BuildAnimation = (
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[0],
-    `#${IDs.About}`,
+    `#${IDs.About}`
   );
 
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[1],
-    `#${IDs.Projects}`,
+    `#${IDs.Projects}`
   );
 
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[2],
-    `#${IDs.Contact}`,
+    `#${IDs.Contact}`
   );
 };
 
-const buildBGWaveAnimation = (
-  model: THREE.Mesh,
-  start: string,
-) => {
+const buildBGWaveAnimation = (model: THREE.Mesh, start: string) => {
   const timeline = gsap.timeline();
 
   timeline.fromTo(
@@ -693,7 +653,7 @@ const NavItem = styled.li`
   margin-right: 32px;
 `;
 
-const NavLink = styled.button`
+const NavLink = styled.a`
   border: none;
   background: none;
   text-decoration: none;
