@@ -388,32 +388,24 @@ const BuildAnimation = (
     // @ts-ignore
     waveModels.current[0],
     `#${IDs.About}`,
-    palette.theme.color1,
-    palette.theme.color4
   );
 
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[1],
     `#${IDs.Projects}`,
-    palette.theme.color4,
-    palette.theme.color4
   );
 
   buildBGWaveAnimation(
     // @ts-ignore
     waveModels.current[2],
     `#${IDs.Contact}`,
-    palette.theme.color4,
-    palette.theme.color1
   );
 };
 
 const buildBGWaveAnimation = (
   model: THREE.Mesh,
   start: string,
-  oldColor: string,
-  newColor: string
 ) => {
   const timeline = gsap.timeline();
 
